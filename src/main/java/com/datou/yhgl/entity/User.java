@@ -30,31 +30,25 @@ public class User implements Serializable {
 
     private String name;
 
-    private String gender;
-
     private Integer age;
-
-    private String address;
-
-    private String qq;
 
     private String email;
 
-    private String username;
+    private String phone;
 
-    private String password;
-    @TableField(fill = FieldFill.INSERT)
-    private Date createTime;
-    @TableField(fill = FieldFill.INSERT_UPDATE)
-    private Date updateTime;
-    //乐观锁版本号
-    @TableField(fill = FieldFill.INSERT)
-    @Version
-    private Integer version;
-    //逻辑删除标记
-    @TableField(fill = FieldFill.INSERT)
-    @TableLogic
-    private Integer deleted;
+//    private String password;
+//    @TableField(fill = FieldFill.INSERT)
+//    private Date createTime;
+//    @TableField(fill = FieldFill.INSERT_UPDATE)
+//    private Date updateTime;
+//    //乐观锁版本号
+//    @TableField(fill = FieldFill.INSERT)
+//    @Version
+//    private Integer version;
+//    //逻辑删除标记
+//    @TableField(fill = FieldFill.INSERT)
+//    @TableLogic
+//    private Integer deleted;
 
 
 }
