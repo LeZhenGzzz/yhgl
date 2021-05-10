@@ -30,8 +30,8 @@ import org.springframework.boot.test.context.SpringBootTest;
         String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + "/src/main/java");
 
-        gc.setAuthor("datou");
-        gc.setOpen(false); //生成后是否打开资源管理器
+        gc.setAuthor("lz");
+        gc.setOpen(true); //生成后是否打开资源管理器
         gc.setFileOverride(false); //重新生成时文件是否覆盖
         gc.setServiceName("%sService");	//去掉Service接口的首字母I
         gc.setIdType(IdType.ID_WORKER); //主键策略
@@ -42,10 +42,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 
         // 3、数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/study?serverTimezone=GMT%2B8");
+        dsc.setUrl("jdbc:mysql://119.45.144.50:3306/datou?serverTimezone=GMT%2B8");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("root");
+        dsc.setPassword("AZYTSfkccHjsmtZ5");
         dsc.setDbType(DbType.MYSQL);
         mpg.setDataSource(dsc);
 
@@ -62,7 +62,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
         // 5、策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude("user");
+        strategy.setInclude("account","test");
 
         strategy.setNaming(NamingStrategy.underline_to_camel);//数据库表映射到实体的命名策略
         strategy.setTablePrefix(pc.getModuleName() + "_"); //生成实体时去掉表前缀

@@ -87,7 +87,7 @@
 
     <div style="float: left;">
 
-        <form class="form-inline" action="${pageContext.request.contextPath}/findUserByPageServlet" method="post">
+        <form class="form-inline" action="${pageContext.request.contextPath}/yhgl/user/findall" method="post">
             <div class="form-group">
                 <label for="exampleInputName2">姓名</label>
                 <input type="text" name="name" value="${condition.name[0]}" class="form-control" id="exampleInputName2" >
