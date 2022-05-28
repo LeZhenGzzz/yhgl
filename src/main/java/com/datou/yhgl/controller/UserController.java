@@ -29,6 +29,7 @@ public class UserController {
         System.out.println("啊啊啊");
         System.out.println("啊啊啊");
         System.out.println("啊啊啊");
+        System.out.println("啊啊啊");
         return list;
     }
     @GetMapping("{pagename}")
