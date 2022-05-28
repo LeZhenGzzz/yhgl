@@ -27,6 +27,9 @@ public class UserController {
     public List<User> findall(){
         List<User> list = userService.list(null);
         System.out.println("啊啊啊");
+        System.out.println("啊啊啊");
+        System.out.println("啊啊啊");
+        System.out.println("啊啊啊");
 
         return list;
     }
