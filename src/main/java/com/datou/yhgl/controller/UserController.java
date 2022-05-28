@@ -26,6 +26,7 @@ public class UserController {
     @PostMapping("/findall")
     public List<User> findall(){
         List<User> list = userService.list(null);
+        System.out.println("hahah");
         return list;
     }
     @GetMapping("{pagename}")
