@@ -18,8 +18,6 @@ import java.util.Date;
  * @since 2020-03-07
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
 @ApiModel(value="User对象", description="")
 public class User implements Serializable {
 
@@ -28,9 +26,23 @@ public class User implements Serializable {
     @TableId(value = "id", type = IdType.ID_WORKER)
     private Long id;
 
+    private Long userId;
+
     private String name;
 
+    public User() {
+    }
+
     private Integer age;
+
+    public User(Long id, Long userId, String name, Integer age, String email, String phone) {
+        this.id = id;
+        this.userId = userId;
+        this.name = name;
+        this.age = age;
+        this.email = email;
+        this.phone = phone;
+    }
 
     private String email;
 
