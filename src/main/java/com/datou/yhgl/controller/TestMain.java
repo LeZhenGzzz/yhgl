@@ -25,6 +25,12 @@ import java.util.stream.Collectors;
 
 public class TestMain {
     public static void main(String[] args) {
+        String str=String.format("Hello %s，我是 %s，今年 %s 岁", "CSDN","小猪","12");
+        System.out.println(str);
+
+    }
+
+    private static void extracted() {
         ArrayList<Long> longs = CollUtil.newArrayList(1L, 2L);
         String s = JSON.toJSONString(longs);
         System.out.println(s);
@@ -40,7 +46,6 @@ public class TestMain {
         // 集合中对象属性转map
         Map<Long, String> map = usersOld.stream().collect(Collectors.toMap(User :: getUserId, User :: getName));
         System.out.println(map);
-
     }
 
     private List<KnowledgeType> createDefaultData() {

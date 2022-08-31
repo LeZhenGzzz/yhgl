@@ -1,5 +1,8 @@
 package com.datou.yhgl;
 
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.extra.mail.MailAccount;
+import cn.hutool.extra.mail.MailUtil;
 import com.datou.yhgl.entity.User;
 import com.datou.yhgl.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
@@ -58,6 +61,26 @@ class YhglApplicationTests {
             System.out.println(users.get(i));
         }
     }
-
+    @Test
+    public void simpleSendTest() {
+        // 创建邮件账户对象
+        MailAccount account = new MailAccount();
+        // 邮件服务器的SMTP地址，可选，默认为smtp.<发件人邮箱后缀>
+        account.setHost("smtp.exmail.qq.com");
+        // 邮件服务器的SMTP端口，默认是25端口,ssl端口465
+        account.setPort(465);
+        // 是否需要用户名密码验证
+        account.setAuth(true);
+        // 发送方，遵循RFC-822标准
+        account.setFrom("yuezheng@manchen.cn");
+        // 用户名,腾讯企业邮箱必须要设置成你自己使用邮箱的名称，否则会报错，权限认证失败
+        account.setUser("yuezheng@manchen.cn");
+        // 使用客户端密码(授权码)--需提前在邮箱中配置设置
+        account.setPass("992Cim3RsAB6nybQ");
+        // 开启ssl安全连接
+        account.setSslEnable(true);
+        // 参数2是收件邮箱,可以是多个,参数3是主题,参数4是内容,参数5是否是html格式内容标识
+        MailUtil.send(account, CollUtil.newArrayList( "qujingyan@manchen.cn","dingwenqing@manchen.cn","642818795@qq.com"), "主题:提桶跑路测试", "邮件来自提桶跑路测试", false);
+    }
 
 }
